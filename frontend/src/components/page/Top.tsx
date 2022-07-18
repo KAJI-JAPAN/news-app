@@ -1,9 +1,21 @@
-import { BeforeLogin } from "../organisms/headers/BeforeLogin"
+import { useEffect } from "react"
+import { useGetTopNews } from "../../hooks/useGetTopNews"
+import { BeforeLoginHeader } from "../organisms/headers/BeforeLoginHeader"
 
 export const Top = () => {
+  const { getTopNews, topNews } = useGetTopNews()
+
+  useEffect(() => getTopNews(), [getTopNews])
+
   return (
     <>
-      <BeforeLogin />
+      <BeforeLoginHeader />
+      { topNews.map((news) => (
+        <div>
+          {news.title}
+        </div>
+        ))
+      }
     </>
   )
 }
