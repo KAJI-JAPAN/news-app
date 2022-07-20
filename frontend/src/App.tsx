@@ -1,17 +1,14 @@
-import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Top } from './components/page/Top';
+import { BrowserRouter } from "react-router-dom"
 import { ChakraProvider } from '@chakra-ui/react';
+import { Router } from './router/Router';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <ChakraProvider>
-          <Routes>
-            <Route path="/top" element={<Top />} />
-          </Routes>
+          <Router />
         </ChakraProvider>
       </BrowserRouter>
     </div>
