@@ -13,16 +13,16 @@ export const Top: FC = memo(() => {
     <>
       <BeforeLoginHeader />
       <Box maxW="800px" mx='auto' py={5}>
-      <Text fontSize='3xl' pb={5}>Top News</Text>
-      { topNews.map((news) => (
-        <TopNews
-          title={news.title}
-          image={news.urlToImage}
-          description={news.description}
-          // url={news.url}
-        />
-      ))
-      }
+        <Text fontSize='3xl' pb={5}>Top News</Text>
+        { topNews.map((news) => (
+          <TopNews
+            title={news.title}
+            image={news.urlToImage}
+            description={news.description}
+            url={news.url}
+          />
+        ))
+        }
       </Box>
     </>
   )

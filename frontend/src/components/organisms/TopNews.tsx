@@ -1,14 +1,16 @@
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Flex, Image, Text } from "@chakra-ui/react"
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Flex, Image, Link, Text } from "@chakra-ui/react"
 import { FC, memo } from "react"
 
 type Props = {
   title: string;
   image: string;
-  description: string
+  description: string;
+  url: string;
 }
 
+
 export const TopNews: FC<Props> = memo((props) => {
-  const { title, image, description }  = props
+  const { title, image, description, url }  = props
   return (
     <Accordion allowToggle>
       <AccordionItem>
@@ -26,6 +28,22 @@ export const TopNews: FC<Props> = memo((props) => {
           </AccordionButton>
         <AccordionPanel pb={4} color="gray.600">
           {description}
+        </AccordionPanel>
+        <AccordionPanel pb={4} color="gray.600">
+          <Link
+            href={url}
+            _hover={{ opacity: 0.5, textDecoration: "none" }}
+            isExternal
+          >
+          <Box
+            border='1px'
+            borderColor='gray.500'
+            textAlign="center"
+            borderRadius={3}
+          >
+            VISIT WEBSITE
+          </Box>
+            </Link>
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
