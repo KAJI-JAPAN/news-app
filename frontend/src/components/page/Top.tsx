@@ -8,6 +8,7 @@ export const Top: FC = memo(() => {
   const { getTopNews, topNews } = useGetTopNews()
 
   useEffect(() =>  getTopNews(), [getTopNews])
+  console.log(topNews)
 
   return (
     <>

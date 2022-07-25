@@ -3,7 +3,7 @@ import { FC, memo } from "react"
 
 type Props = {
   title: string;
-  image: string;
+  image: string | any;
   description: string;
   url: string;
 }
