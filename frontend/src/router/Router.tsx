@@ -1,13 +1,14 @@
 import { FC, memo } from "react";
 import { Route, Routes } from "react-router-dom";
-import { SearchNews } from "../components/page/SearchNews";
-import { Top } from "../components/page/Top";
+import { UniteRoute } from "./UniteRoute";
 
 export const Router: FC= memo(() => {
   return (
     <Routes>
-      <Route path="/top" element={<Top />} />
-      <Route path="/searchResult" element={<SearchNews />} />
+      { UniteRoute.map((route) => (
+        <Route path={route.path} element={route.children} />
+      ))
+    }
     </Routes>
   )
 })

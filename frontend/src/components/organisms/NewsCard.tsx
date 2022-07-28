@@ -9,7 +9,7 @@ type Props = {
 }
 
 
-export const TopNews: FC<Props> = memo((props) => {
+export const NewsCard: FC<Props> = memo((props) => {
   const { title, image, description, url }  = props
   return (
     <Accordion allowToggle>
